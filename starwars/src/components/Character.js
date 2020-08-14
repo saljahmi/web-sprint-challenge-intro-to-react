@@ -12,17 +12,31 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Star Jedi', arial;
+  font-family: 'Audiowide', cursive;
+  letter-spacing: 2px;
   margin: 1rem;
   font-weight: bold;
   font-size: 1rem;
+  width:100%;
+  transition: all .2s ease-in-out;
+  &:hover {
+        transform: scale(1.1);
+    }
 `;
 
 const Detail = styled.div`
-    width: inherit;
+    /* width: 500%; */
     display: flex;
     flex-direction: row;
+    align-items: start;
     justify-content: space-between;
+    width:100%;
+    border-bottom: 1px solid black;
+`;
+
+const DetailsContainer = styled.div`
+    width: 90%;
+    padding-bottom: 1rem;
 `;
 
 export default function Character({ endpoint }) {
@@ -45,35 +59,39 @@ export default function Character({ endpoint }) {
     }, [endpoint]);
 
     return (
-        <Card onClick={() => handleClick()}>
-            <h2>{charData.name}</h2>
+        <Card onClick={() => handleClick() }>
+            <h2> 
+                {charData.name} 
+                {/* <span> {showDetails ? ' ' : ' '} </span>  */}
+            </h2>
+            <p>{showDetails ? '-' : '+'} </p>
             {showDetails && (
-                <div className= "details-container">
+                <DetailsContainer>
                     <Detail>
                         <p>Birth Year: </p>
                         <p>{charData.birth_year}</p>
                     </Detail>
                     <Detail>
                         <p>Mass: </p>
-                        <p>{charData.birth_year}</p>
+                        <p>{charData.mass}</p>
                     </Detail>
                     <Detail>
                         <p>Height: </p>
-                        <p>{charData.birth_year}</p>
+                        <p>{charData.height}</p>
                     </Detail>
                     <Detail>
                         <p>Eye Color: </p>
-                        <p>{charData.birth_year}</p>
+                        <p>{charData.eye_color}</p>
                     </Detail>
                     <Detail>
                         <p>Hair Color: </p>
-                        <p>{charData.birth_year}</p>
+                        <p>{charData.hair_color}</p>
                     </Detail>
                     <Detail>
                         <p>Gender: </p>
-                        <p>{charData.birth_year}</p>
+                        <p>{charData.gender}</p>
                     </Detail>
-                </div>
+                </DetailsContainer>
             )}
         </Card>
     );

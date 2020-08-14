@@ -12,6 +12,16 @@ const Characters = styled.div`
   color: rgb(240, 228, 223);
 `;
 
+const TitleCont = styled.div`
+  width = 90%;
+  margin: 0 auto;
+`;
+
+const Title = styled.img`
+  margin-top: 2rem;
+  width: 90%;
+`;
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -35,7 +45,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <TitleCont>
+        <Title src = {"https://fontmeme.com/permalink/200814/7410846c2524d4a661623859eb03ce55.png"} alt = {"title of page: star wars characters"}/>
+      </TitleCont>
       <Characters>
         {characters.map((char) => (
           <Character key={char.name} endpoint={char.url} />
@@ -46,3 +58,4 @@ const App = () => {
 }
 
 export default App;
+
