@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 const Card = styled.div`
-  background-color: darkseagreen;
+  background-color: rgb(59, 68, 77, 0.7);
   box-sizing: border-box;
   padding: 0.5rem;
   border-radius: 5px;
@@ -13,6 +13,16 @@ const Card = styled.div`
   align-items: center;
   justify-content: center;
   font-family: 'Star Jedi', arial;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+`;
+
+const Detail = styled.div`
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
 export default function Character({ endpoint }) {
@@ -38,13 +48,31 @@ export default function Character({ endpoint }) {
         <Card onClick={() => handleClick()}>
             <h2>{charData.name}</h2>
             {showDetails && (
-                <div>
-                    <p>Birth Year: {charData.birth_year}</p>
-                    <p>Mass: {charData.mass}</p>
-                    <p>Height: {charData.height}</p>
-                    <p>Eye Color: {charData.eye_color}</p>
-                    <p>Hair Color: {charData.hair_color}</p>
-                    <p>Gender: {charData.gender}</p>
+                <div className= "details-container">
+                    <Detail>
+                        <p>Birth Year: </p>
+                        <p>{charData.birth_year}</p>
+                    </Detail>
+                    <Detail>
+                        <p>Mass: </p>
+                        <p>{charData.birth_year}</p>
+                    </Detail>
+                    <Detail>
+                        <p>Height: </p>
+                        <p>{charData.birth_year}</p>
+                    </Detail>
+                    <Detail>
+                        <p>Eye Color: </p>
+                        <p>{charData.birth_year}</p>
+                    </Detail>
+                    <Detail>
+                        <p>Hair Color: </p>
+                        <p>{charData.birth_year}</p>
+                    </Detail>
+                    <Detail>
+                        <p>Gender: </p>
+                        <p>{charData.birth_year}</p>
+                    </Detail>
                 </div>
             )}
         </Card>

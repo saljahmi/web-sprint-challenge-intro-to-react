@@ -9,6 +9,7 @@ import Character from './components/Character'
 const Characters = styled.div`
   width: 80%;
   margin: 0 auto;
+  color: rgb(240, 228, 223);
 `;
 
 const App = () => {
