@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const Card = styled.li`
-  list-style: none;
+const Card = styled.div`
   background-color: darkseagreen;
   box-sizing: border-box;
   padding: 0.5rem;
@@ -13,6 +12,7 @@ const Card = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Star Jedi', arial;
 `;
 
 export default function Character({ endpoint }) {

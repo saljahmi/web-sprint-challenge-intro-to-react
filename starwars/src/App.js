@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import Character from './components/Character'
 
-const Characters = styled.ul`
+const Characters = styled.div`
   width: 80%;
   margin: 0 auto;
 `;
@@ -35,11 +35,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      {/* <Characters>
+      <Characters>
         {characters.map((char) => (
           <Character key={char.name} endpoint={char.url} />
         ))}
-      </Characters> */}
+      </Characters>
     </div>
   );
 }
